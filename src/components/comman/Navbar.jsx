@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { TickIcon } from "../helper/Icon";
+import Heading from "./Heading";
 
 function Navbar() {
   return (
-    <div>
+    <>
       <div className="max-w-[1220px] xl:px-[40px] lg:px-[30px] md:px-[20px] px-[16px] mx-auto">
         <div className="flex items-center justify-between lg:mt-[45px] md:mt-[30px] mt-[20px]">
           <Link
@@ -25,10 +25,10 @@ function Navbar() {
               <Link href={"/"}>About </Link>
             </li>
             <li className="text-[#4F5665] lg:text-base md:text-sm text-xs font-normal hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-              <Link href={"/"}>Features</Link>
+              <Link href={"/about"}>Features</Link>
             </li>
             <li className="text-[#4F5665] lg:text-base md:text-sm text-xs font-normal hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-              <Link href={"/"}>Pricing</Link>
+              <Link href={"/contact-us"}>Pricing</Link>
             </li>
             <li className="text-[#4F5665] lg:text-base md:text-sm text-xs font-normal hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
               <Link href={"/"}>Testimonials</Link>
@@ -55,7 +55,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

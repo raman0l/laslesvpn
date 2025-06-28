@@ -10,14 +10,14 @@ import Users from "@/components/pages/home/Users";
 export default function Home() {
   return (
     <>
-    <Navbar/>
-    <Hero/>
-    <Users/>
-    <Provide/>
-    <Choose/>
-    <Huge/>
-    <Trusted/>
-    <Footer/>
+      <Navbar />
+      <Hero />
+      <Users />
+      <Provide />
+      <Choose />
+      <Huge />
+      <Trusted />
+      <Footer />
     </>
   );
 }
