@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Heading from "./Heading";
+import { navData } from "../helper/Helper";
 
 function Navbar() {
   return (
@@ -21,21 +22,26 @@ function Navbar() {
             />
           </Link>
           <ul className="flex lg:gap-[40px] md:gap-[20px] gap-[15px] max-[600px]:hidden">
-            <li className="text-[#4F5665] lg:text-base md:text-sm text-xs font-normal hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-              <Link href={"/"}>About </Link>
-            </li>
-            <li className="text-[#4F5665] lg:text-base md:text-sm text-xs font-normal hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
+            {navData.map((item, index) => (
+              <li
+                key={index}
+                className="text-[#4F5665] lg:text-base md:text-sm text-xs font-normal hover:text-[#0B132A] hover:underline duration-500 ease-in-out"
+              >
+                <Link href={item.path}>{item.title}</Link>
+              </li>
+            ))}
+            {/* <li className="text-[#4F5665] lg:text-base md:text-sm text-xs font-normal hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
               <Link href={"/about"}>Features</Link>
             </li>
             <li className="text-[#4F5665] lg:text-base md:text-sm text-xs font-normal hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-              <Link href={"/contact-us"}>Pricing</Link>
+              <Link href={"/provide"}>Pricing</Link>
             </li>
             <li className="text-[#4F5665] lg:text-base md:text-sm text-xs font-normal hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-              <Link href={"/"}>Testimonials</Link>
+              <Link href={"/estimonials"}>Testimonials</Link>
             </li>
             <li className="text-[#4F5665] lg:text-base md:text-sm text-xs font-normal hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-              <Link href={"/"}>Help</Link>
-            </li>
+              <Link href={"/help"}>Help</Link>
+            </li> */}
           </ul>
           <div className="flex gap-1 max-[600px]:hidden">
             <button className="text-[#0B132A] lg:text-base md:text-sm text-xs font-medium lg:p-[13px_25px] md:p-[10px_20px] p-[8px_15px] rounded-[25px] hover:text-white hover:bg-[#F53855] duration-500 ease-in-out">

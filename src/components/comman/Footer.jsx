@@ -4,6 +4,7 @@ import React from "react";
 import { FacebookIcon, InstagramIcon, TwtterIcon } from "../helper/Icon";
 import Heading from "./Heading";
 import Paragraph from "./Paragraph";
+import { earnData, engagetData, ProductData } from "../helper/Helper";
 
 function Footer() {
   return (
@@ -65,7 +66,7 @@ function Footer() {
                     className="hover:-translate-y-3 duration-600 ease-in-out"
                   >
                     <InstagramIcon />
-                  </Link>{" "}
+                  </Link>
                   <Link
                     href={"https://www.instagram.com/accounts/login/?hl=en"}
                     className="hover:-translate-y-3 duration-600 ease-in-out"
@@ -83,58 +84,40 @@ function Footer() {
                 <li className="text-[#0B132A] lg:text-lg md:text-base text-sm font-semibold leading-[166%] lg:pb-[10px] md:pb-[7px] pb-[4px]">
                   Product
                 </li>
-                <li className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-                  <Link href={"/"}>Download </Link>
-                </li>
-                <li className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-                  <Link href={"/"}>Pricing</Link>
-                </li>
-                <li className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-                  <Link href={"/"}>Locations</Link>
-                </li>
-                <li className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-                  <Link href={"/"}>Server</Link>
-                </li>
-                <li className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-                  <Link href={"/"}>Countries</Link>
-                </li>{" "}
-                <li className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-                  <Link href={"/"}>Blog</Link>
-                </li>
+                {ProductData.map((item, index) => (
+                  <li
+                    key={index}
+                    className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out"
+                  >
+                    <Link href={"/"}>{item.title}</Link>
+                  </li>
+                ))}
               </ul>
               <ul className="flex flex-col lg:gap-[10px] md:gap-[7px] gap-[5px]">
                 <li className="text-[#0B132A] lg:text-lg md:text-base text-sm font-semibold leading-[166%] lg:pb-[10px] md:pb-[7px] pb-[4px]">
                   Engage
                 </li>
-                <li className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-                  <Link href={"/"}>LaslesVPN ? </Link>
-                </li>
-                <li className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-                  <Link href={"/"}>FAQ</Link>
-                </li>
-                <li className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-                  <Link href={"/"}>Tutorials</Link>
-                </li>
-                <li className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-                  <Link href={"/"}>About Us</Link>
-                </li>
-                <li className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-                  <Link href={"/"}>Privacy Policy</Link>
-                </li>{" "}
-                <li className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-                  <Link href={"/"}>Terms of Service</Link>
-                </li>
+                {engagetData.map((item, index) => (
+                  <li
+                    key={index}
+                    className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out"
+                  >
+                    <Link href={"/"}>{item.title} </Link>
+                  </li>
+                ))}
               </ul>
               <ul className="flex flex-col lg:gap-[10px] md:gap-[7px] gap-[5px]">
                 <li className="text-[#0B132A] lg:text-lg md:text-base text-sm font-semibold leading-[166%] lg:pb-[10px] md:pb-[7px] pb-[4px] text-nowrap">
                   Earn Money
                 </li>
-                <li className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-                  <Link href={"/"}>Affiliate </Link>
-                </li>
-                <li className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out">
-                  <Link href={"/"}>Become Partner</Link>
-                </li>
+                {earnData.map((item, index) => (
+                  <li
+                    key={index}
+                    className="text-[#4F5665] lg:text-lg md:text-base text-sm font-medium leading-[166%] hover:text-[#0B132A] hover:underline duration-500 ease-in-out"
+                  >
+                    <Link href={"/"}>{item.title}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

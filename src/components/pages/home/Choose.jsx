@@ -1,5 +1,11 @@
 import Heading from "@/components/comman/Heading";
 import Paragraph from "@/components/comman/Paragraph";
+import {
+  chooseData,
+  freeData,
+  premiumData,
+  standardData,
+} from "@/components/helper/Helper";
 import Image from "next/image";
 import React from "react";
 
@@ -33,61 +39,27 @@ function Choose() {
                   <p className="lg:text-lg md:text-base text-sm text-[#0B132A] font-medium leading-[166%] text-center">
                     Free Plan
                   </p>
-                  <ul className="max-w-[300px] mx-auto flex flex-col lg:gap-[10px] md:gap-[7px] gap-[5px]">
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <p className="lg:text-sm text-xs text-[#4F5665] font-normal leading-[214%]">
-                        Unlimited Bandwitch
-                      </p>
-                    </li>
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <Paragraph
-                        paragraph={"Encrypted Connection"}
-                        className={
-                          "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                        }
-                      />
-                    </li>
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <Paragraph
-                        paragraph={"No Traffic Logs"}
-                        className={
-                          "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                        }
-                      />
-                    </li>
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <Paragraph
-                        paragraph={" Works on All Devices"}
-                        className={
-                          "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                        }
-                      />
-                    </li>
-                  </ul>
+                  <div className="max-w-[300px] mx-auto flex flex-col lg:gap-[10px] md:gap-[7px] gap-[5px]">
+                    {freeData.map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center"
+                      >
+                        <Image
+                          src={"/assets/svg/right-arrow-1.svg"}
+                          alt="arrow"
+                          width={24}
+                          height={24}
+                        />
+                        <Paragraph
+                          className={
+                            "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
+                          }
+                          paragraph={item.title}
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
               <div className="flex flex-col gap-[20px]">
@@ -114,81 +86,29 @@ function Choose() {
                 </div>
                 <div className="flex flex-col lg:gap-[20px] md:gap-[15px] gap-[10px]">
                   <p className="lg:text-lg md:text-base text-sm text-[#0B132A] font-medium leading-[166%] text-center">
-                    Free Plan
+                    Standard Plan
                   </p>
-                  <ul className="max-w-[300px] mx-auto flex flex-col lg:gap-[10px] md:gap-[7px] gap-[5px]">
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <Paragraph
-                        paragraph={" Unlimited Bandwitch"}
-                        className={
-                          "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                        }
-                      />
-                    </li>
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <Paragraph
-                        paragraph={"Encrypted Connection"}
-                        className={
-                          "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                        }
-                      />
-                    </li>{" "}
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <Paragraph
-                        paragraph={"Yes Traffic Logs"}
-                        className={
-                          "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                        }
-                      />
-                    </li>{" "}
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <Paragraph
-                        paragraph={" Works on All Devices"}
-                        className={
-                          "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                        }
-                      />
-                    </li>
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <p className="lg:text-sm text-xs text-[#4F5665] font-normal leading-[214%]"></p>
-                      <Paragraph
-                        paragraph={"Connect Anyware"}
-                        className={
-                          "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                        }
-                      />
-                    </li>
-                  </ul>
+                  <div className="max-w-[300px] mx-auto flex flex-col lg:gap-[10px] md:gap-[7px] gap-[5px]">
+                    {standardData.map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center"
+                      >
+                        <Image
+                          src={"/assets/svg/right-arrow-1.svg"}
+                          alt="arrow"
+                          width={24}
+                          height={24}
+                        />
+                        <Paragraph
+                          className={
+                            "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
+                          }
+                          paragraph={item.title}
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
               <div className="flex flex-col gap-[20px]">
@@ -215,97 +135,29 @@ function Choose() {
                 </div>
                 <div className="flex flex-col lg:gap-[20px] md:gap-[15px] gap-[10px]">
                   <p className="lg:text-lg md:text-base text-sm text-[#0B132A] font-medium leading-[166%] text-center">
-                    Free Plan
+                    Premium Plan
                   </p>
-                  <ul className="max-w-[300px] mx-auto flex flex-col lg:gap-[10px] md:gap-[7px] gap-[5px]">
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <Paragraph
-                        paragraph={"Unlimited Bandwitch"}
-                        className={
-                          "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                        }
-                      />
-                    </li>
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <Paragraph
-                        paragraph={"Encrypted Connection"}
-                        className={
-                          "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                        }
-                      />
-                    </li>{" "}
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <Paragraph
-                        paragraph={"Yes Traffic Logs"}
-                        className={
-                          "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                        }
-                      />
-                    </li>{" "}
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <p className="lg:text-sm text-xs text-[#4F5665] font-normal leading-[214%]"></p>
-                      <Paragraph
-                        paragraph={"Works on All Devices"}
-                        className={
-                          "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                        }
-                      />
-                    </li>
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <Paragraph
-                        paragraph={"Connect Anyware"}
-                        className={
-                          "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                        }
-                      />
-                    </li>
-                    <li className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center">
-                      <Image
-                        src={"/assets/svg/right-arrow-1.svg"}
-                        alt="arrow"
-                        width={24}
-                        height={24}
-                      />
-                      <Paragraph
-                        paragraph={"Get "}
-                        className={
-                          "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                        }
-                        spantitle={"new "}
-                        para={"Features"}
-                      />
-                    </li>
-                  </ul>
+                  <div className="max-w-[300px] mx-auto flex flex-col lg:gap-[10px] md:gap-[7px] gap-[5px]">
+                    {premiumData.map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex lg:gap-[20px] md:gap-[15px] gap-[10px] items-center"
+                      >
+                        <Image
+                          src={"/assets/svg/right-arrow-1.svg"}
+                          alt="arrow"
+                          width={24}
+                          height={24}
+                        />
+                        <Paragraph
+                          className={
+                            "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
+                          }
+                          paragraph={item.title}
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
               <div className="flex flex-col gap-[20px]">

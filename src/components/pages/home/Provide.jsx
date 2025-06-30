@@ -1,5 +1,6 @@
 import Heading from "@/components/comman/Heading";
 import Paragraph from "@/components/comman/Paragraph";
+import { provideData } from "@/components/helper/Helper";
 import { TickIcon } from "@/components/helper/Icon";
 import Image from "next/image";
 import React from "react";
@@ -32,44 +33,22 @@ function Provide() {
               />
               <p className="lg:text-base md:text-sm text-xs text-[#4F5665] font-normal  leading-[187%] min-[600px]:max-w-[427px]"></p>
             </div>
-            <ul className="flex flex-col lg:gap-[15px] md:gap-[11px] gap-[8px]">
-              <li className="flex lg:gap-[10px] md:gap-[8px] gap-[6px]">
-                <TickIcon />
-                <Paragraph
-                  paragraph={"Powerfull online protection."}
-                  className={
-                    "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                  }
-                />
-              </li>
-              <li className="flex gap-[10px]">
-                <TickIcon />
-                <Paragraph
-                  paragraph={"Internet without borders."}
-                  className={
-                    "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                  }
-                />
-              </li>{" "}
-              <li className="flex gap-[10px]">
-                <TickIcon />
-                <Paragraph
-                  paragraph={"Supercharged VPN"}
-                  className={
-                    "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                  }
-                />
-              </li>{" "}
-              <li className="flex gap-[10px]">
-                <TickIcon />
-                <Paragraph
-                  paragraph={" No specific time limits."}
-                  className={
-                    "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
-                  }
-                />
-              </li>
-            </ul>
+            <div className="flex flex-col lg:gap-[15px] md:gap-[11px] gap-[8px]">
+              {provideData.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex lg:gap-[10px] md:gap-[8px] gap-[6px]"
+                >
+                  <TickIcon />
+                  <Paragraph
+                    paragraph={item.title}
+                    className={
+                      "text-[12px] md:!text-[13px] lg:!text-[14px] text-[#4F5665] leading-[214%] font-normal"
+                    }
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
